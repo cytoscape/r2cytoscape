@@ -8,5 +8,7 @@
 #' @section Example: applyLayout('force-directed defaultSpringCoefficient=.000004 defaultSpringLength=100')
 
 applyLayout<-function(layout,base.url='http://localhost:1234/v1'){
-    invisible(commandRun(paste('layout',layout,'network="current"',sep=' ')))
+    res<-commandRun(paste('layout',layout,'network="current"',sep=' '))
+    if(length(res)>0) #show error messages
+        return(res)
 }

@@ -6,7 +6,8 @@
 #' @param keep.selected (boolean) whether to add to existing selection (TRUE) or clear prior selection (FALSE); default is FALSE
 #' @param network name or suid of the network; default is "current" network
 #' @param base.url cyrest base url for communicating with cytoscape
-#' @return list of SUIDs for nodes actually selected
+#' @return list of SUIDs for nodes selected, excluding those that did not match
+#' provided list and those previously selected (even if keep.selected=TRUE)
 #' @export
 #' @import RJSONIO
 #' @import httr
@@ -35,6 +36,8 @@ selectNodes <- function(nodes, by.col='name', keep.selected=F, network='current'
     url<- sprintf("%s/commands/network/select", base.url,sep="")
     response <- POST(url=url,body=sel, encode="json",content_type_json())
     selectedNodes=unname(fromJSON(rawToChar(response$content)))[[1]]
+    if(length(selectedNodes)==0)
+        selectedNodes = c()
     return(selectedNodes)
 }
 

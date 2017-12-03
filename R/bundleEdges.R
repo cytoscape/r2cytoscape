@@ -19,5 +19,5 @@ bundleEdges<-function(network='current',base.url='http://localhost:1234/v1'){
 
     res = GET(eb.url)
     done = fromJSON(rawToChar(res$content))
-    return(done)
+    return(done[[1]])
 }

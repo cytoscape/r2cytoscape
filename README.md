@@ -1,6 +1,8 @@
 # r2cytoscape 
 Suite of wrappers for CyREST functions in R
 
+[![Travis-CI Build Status](https://travis-ci.org/cytoscape/r2cytoscape.svg?branch=master)](https://travis-ci.org/cytoscape/r2cytoscape)
+
 For a quick start, see [check-cytoscape-connection.R](../check-cytoscape-connection.R). This example creates a network from a list of nodes and edges, and then maps node and edge attribute data to various visual properties.
 
 #### How to see a list of:

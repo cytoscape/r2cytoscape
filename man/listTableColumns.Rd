@@ -4,11 +4,11 @@
 \alias{listTableColumns}
 \title{List names of all columns in a table}
 \usage{
-listTableColumns(table, namespace = "default", network = "current",
-  base.url = "http://localhost:1234/v1")
+listTableColumns(table = "node", namespace = "default",
+  network = "current", base.url = "http://localhost:1234/v1")
 }
 \arguments{
-\item{table}{name of table, e.g., node, edge, network}
+\item{table}{name of table, e.g., node, edge, network; default is "node"}
 
 \item{namespace}{namespace of table, e.g., default}
 
@@ -23,7 +23,7 @@ list of column names
 List names of all columns in a table
 }
 \section{Examples}{
- listTableColumns('node') \cr
+ listTableColumns() \cr
 listTableColumns('edge') \cr
 listTableColumns('network')
 }

@@ -12,35 +12,35 @@ check_galfiltered<-function() {
         commandRun('session open file="sampleData/galFiltered.cys"')
 }
 
-## Skip all tests if Cytoscape is not running
-check_cytoscape()
-
-## Open galFiltered.cys if not already
-check_galfiltered()
-
 ## Run tests
 test_that("applyLayout",{
+    check_cytoscape()
+    check_galfiltered()
     expect_equal(length(applyLayout("circular")),0) #no response
     expect_equal(length(applyLayout("asdfgh")),1) #error response
     expect_error(applyLayout(),"is missing")
 })
 
 test_that("applyStyle",{
+    check_cytoscape()
     expect_equal(length(applyStyle("default")),2) #success response
     expect_equal(length(applyStyle("asdfgh")),1) #failed response
     expect_error(applyStyle(),"is missing")
 })
 
 test_that("bundleEdges",{
+    check_cytoscape()
     expect_equal(length(bundleEdges()),1) #success response
 })
 
 test_that("checkCytoscapeVersion", {
+    check_cytoscape()
     expect_true(is.character(checkCytoscapeVersion()["apiVersion"]))
     expect_true(is.character(checkCytoscapeVersion()["cytoscapeVersion"]))
 })
 
 test_that("selectNodes, selectFirstNeighbors, clearSelection",{
+    check_cytoscape()
     expect_equal(selectNodes("MCM1"),NULL)
     expect_equal(length(selectNodes("YIL070C")),1)
     expect_equal(length(selectFirstNeighbors()),2)
@@ -52,6 +52,7 @@ test_that("selectNodes, selectFirstNeighbors, clearSelection",{
 })
 
 test_that("getNetwork*",{
+    check_cytoscape()
     expect_match(getNetworkName(),"galFiltered.sif")
     expect_equal(length(getNetworkSuid()),1)
     expect_match(getNetworkName(getNetworkSuid()),"galFiltered.sif")
@@ -59,6 +60,7 @@ test_that("getNetwork*",{
 })
 
 test_that("get*Table*",{
+    check_cytoscape()
     expect_warning(getNodeTable()) #due to missing data for "?" node
     #expect_equal(nrow(getNodeTable()),331) #warning
     #expect_equal(ncol(getNodeTable()),28)  #warning
@@ -69,6 +71,7 @@ test_that("get*Table*",{
 })
 
 test_that("list*", {
+    check_cytoscape()
     expect_match(listNetworks(),"galFiltered.sif")
     expect_true(length(listStyles())>15)
     expect_equal(length(listTableColumns()),28)

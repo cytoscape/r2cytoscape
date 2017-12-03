@@ -19,7 +19,8 @@ selectNodes(nodes, by.col = "name", keep.selected = F,
 \item{base.url}{cyrest base url for communicating with cytoscape}
 }
 \value{
-list of SUIDs for nodes actually selected
+list of SUIDs for nodes selected, excluding those that did not match
+provided list and those previously selected (even if keep.selected=TRUE)
 }
 \description{
 Select nodes based on name, SUID or any other column.

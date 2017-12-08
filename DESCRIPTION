@@ -12,4 +12,7 @@ LazyData: true
 RoxygenNote: 6.0.1
 URL: https://github.com/cytoscape/r2cytoscape
 BugReports: https://github.com/cytoscape/r2cytoscape/issues
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

@@ -35,12 +35,6 @@ This function is a convenient way to verify a connection to Cytoscape. It is als
 checkCytoscapeVersion()
 ```
 
-**Note: By default CyREST communicates with Cytoscape through port 1234. To specify a custom port, set the **rest.port **property in Cytoscape (Edit>Preferences>Properties...) and specify the** base.url **in all your r2cytoscape function calls, like so:**
-
-* port.number = 4321
-* base.url = paste('http://localhost:',port.number,'/v1',sep="")
-* checkCytoscapeVersion(base.url=base.url)
-
 ### My First Network
 Let's create a Cytoscape network from some basic R objects
 ```{r}

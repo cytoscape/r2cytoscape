@@ -15,7 +15,7 @@ We will use pacman to install the required packages.
 ```{r, echo=FALSE}
 if(!("pacman" %in% installed.packages())) install.packages("pacman")
 library(pacman)
-p_load(RJSONIO,igraph,httr,XM,r2cytoscape)
+p_load(RJSONIO,igraph,httr,XML,r2cytoscape)
 ```
 
 ### Required software

@@ -12,9 +12,4 @@ You can edit or add new functions to the r2cytoscape package by making pull requ
 * Provide *base.url='http://<span></span>localhost:1234/v1'* as an optional arg towards the end, if needed.
 * Provide *network='current'* and *network.viewid='current'* as optional args towards the end, if needed. And then make use of *getNetworkSuid()*, *getNetworkName()* and *getNetworkViewId()* accordingly to retrieve IDs (or names) for current network and view.
 * As always, position required args before options args to allow efficient function calls
-* Refer to the roadmap of functions to be developed to help prioritize your work and choose harmonous function names and args. Thanks!
-
-#### Functions to be developed
-- [X] createNetworkFromIgraph
-- [ ] getNetworkAsIgraph
-- [ ] renameTableColumn
+* Refer to [the issues](../../issues) for functions to be developed to help prioritize your work and choose harmonous function names and args. Thanks!

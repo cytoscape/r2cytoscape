@@ -1,7 +1,6 @@
 ---
 title: "Cytoscape and igraph"
 author: "Alex Pico"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Cytoscape and igraph}
@@ -9,10 +8,28 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+This vignette will show you how to convert networks between igraph and Cytoscape.
+
+### Required packages
+We will use pacman to install the required packages.
+```{r, echo=FALSE}
+if(!("pacman" %in% installed.packages())) install.packages("pacman")
+library(pacman)
+p_load(RJSONIO,igraph,httr,XM,r2cytoscape)
+```
+
+### Required software
+The whole point of r2cytoscape is to connect with Cytoscape. You will need to install and launch Cytoscape: 
+
+* [Download Cytoscape](http://www.cytoscape.org/download.php) 
+* Complete installation wizard
+* Launch Cytoscape 
+
+### From igraph to Cytoscape
 The igraph package is a popular network tool among R users. With r2cytoscape, you can easily translate igraph networks to Cytoscape networks!
 
 Here is a basic igraph network construction from the [graph_from_data_frame docs](http://igraph.org/r/doc/graph_from_data_frame.html):
-```
+```{r}
 actors <- data.frame(name=c("Alice", "Bob", "Cecil", "David",
                             "Esmeralda"),
                      age=c(48,33,45,34,21),
@@ -27,12 +44,13 @@ g <- graph_from_data_frame(relations, directed=TRUE, vertices=actors)
 
 You now have an igraph network, g.  In order to translate the network together with all vertex (node) and edge attributes over to Cytoscape, simply use:
 
-```
+```{r}
 createNetworkFromIgraph(g, "myNetwork")
 ```
 
+### From Cytoscape to igraph 
 Inversely, you can use createIgraphFromNetwork() in r2cytoscape to retreive vertex (node) and edge data.frames to construct an igraph network. 
 
-```
+```{r}
 g2 <- createIgraphFromNetwork("myNetwork")
 ```

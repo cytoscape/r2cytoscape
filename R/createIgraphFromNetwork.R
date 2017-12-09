@@ -19,8 +19,15 @@ createIgraphFromNetwork <- function(network='current',base.url='http://localhost
         network = getNetworkSuid(network.name=network,base.url=base.url) # then get SUID
 
     #get dataframes
-    cyedges = getTableColumns('edge',network = network,base.url = base.url)
-    cynodes = getTableColumns('node',network = network,base.url = base.url)
+    cyedges <- getTableColumns('edge',network = network,base.url = base.url)
+    cynodes <- getTableColumns('node',network = network,base.url = base.url)
+
+    #check for source and target columns
+    if(!"source" %in% colnames(cyedges)||(!"target" %in% colnames(cyedges))){
+        st=data.frame(do.call('rbind',strsplit(cyedges$name,"\ \\(.*\\)\ ")))
+        colnames(st) <- c("source","target")
+        cyedges <- cbind(st,cyedges)
+    }
 
     #setup columns for igraph construction
     colnames(cyedges)[colnames(cyedges)=="source"]<-"from"

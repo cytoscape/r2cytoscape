@@ -34,7 +34,7 @@
 #' }
 
 createNetwork <- function(nodes=NULL,edges=NULL,network.name="MyNetwork",
-                          collection.name="myNetworkCollection",base.url='http://localhost:1234/v1',...) {
+                          collection.name="MyNetworkCollection",base.url='http://localhost:1234/v1',...) {
 
     #defining variable names to be used globally later on (to avoid devtools::check() NOTES)
     CreateNetwork.global.counter <- NULL
@@ -72,6 +72,10 @@ createNetwork <- function(nodes=NULL,edges=NULL,network.name="MyNetwork",
     )
 
     network <- toJSON(json_network)
+
+    #swap any spaces in names
+    network.name <- gsub(" ","%20",network.name)
+    collection.name <- gsub(" ","%20",collection.name)
 
     url<- sprintf("%s/networks?title=%s&collection=%s",
                   base.url,network.name,collection.name,sep="")

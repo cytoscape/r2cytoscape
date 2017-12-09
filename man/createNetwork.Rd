@@ -5,7 +5,7 @@
 \title{Create a network from R objects}
 \usage{
 createNetwork(nodes = NULL, edges = NULL, network.name = "MyNetwork",
-  collection.name = "myNetworkCollection",
+  collection.name = "MyNetworkCollection",
   base.url = "http://localhost:1234/v1", ...)
 }
 \arguments{

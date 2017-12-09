@@ -1,7 +1,6 @@
 ---
 title: "Introduction"
 author: "Alex Pico"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction}
@@ -15,7 +14,7 @@ It is recommended that your run this vignette *prior* to Cytoscape Automation wo
 
 ### Required packages
 We will use pacman to install the required packages.
-```
+```{r, echo=FALSE}
 if(!("pacman" %in% installed.packages())) install.packages("pacman")
 library(pacman)
 p_load(RJSONIO,igraph,httr,XML)
@@ -31,13 +30,13 @@ The whole point of r2cytoscape is to connect with Cytoscape. You will need to in
 ### First Contact
 This function is a convenient way to verify a connection to Cytoscape. It is also helpful for logging the versions of CyREST and Cytoscape in your scripts.
 
-```
+```{r}
 checkCytoscapeVersion()
 ```
 
 ### My First Network
 Let's create a Cytoscape network from some basic R objects
-```
+```{r}
 mynodes <- data.frame(id=c("node 0","node 1","node 2","node 3"), 
                       group=c("A","A","B","B"), # optional
                       stringsAsFactors=FALSE)
@@ -54,7 +53,7 @@ network.suid <- createNetwork(mynodes,myedges,network.name,collection.name)
 
 ### My First Style
 create style with node attribute-fill mappings and some defaults
-```
+```{r}
 style.name = "myStyle"
 defaults <- list(NODE_SHAPE="diamond",
                  NODE_SIZE=30,
@@ -82,23 +81,23 @@ help(package=r2cytoscape)
 ```
 
 Open swagger docs for live instances of CyREST API and CyREST-supported commands:
-```
+```{r,eval=FALSE}
 openCySwagger()  # CyREST API
 openCySwagger("commands")  # CyREST Commands API
 ```
 
 List available commands and arguments in R. Use "help" to list top level:
-```
+```{r}
 commandHelp("help")  
 ```
 
 List **network** commands. Note that "help" is optional:
-```
+```{r}
 commandHelp("help network")  
 ```
 
 List arguments for the **network select** command:
-```
+```{r}
 commandHelp("help network select") 
 ```
 

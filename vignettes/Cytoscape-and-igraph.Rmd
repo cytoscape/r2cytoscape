@@ -10,12 +10,10 @@ vignette: >
 
 This vignette will show you how to convert networks between igraph and Cytoscape.
 
-### Required packages
-We will use pacman to install the required packages.
-```{r, echo=FALSE}
-if(!("pacman" %in% installed.packages())) install.packages("pacman")
-library(pacman)
-p_load(RJSONIO,igraph,httr,XML,r2cytoscape)
+### Installation
+```{r, echo=F, eval=F}
+source("https://bioconductor.org/biocLite.R")
+biocLite("r2cytoscape", "igraph")
 ```
 
 ### Required software
@@ -29,7 +27,7 @@ The whole point of r2cytoscape is to connect with Cytoscape. You will need to in
 The igraph package is a popular network tool among R users. With r2cytoscape, you can easily translate igraph networks to Cytoscape networks!
 
 Here is a basic igraph network construction from the [graph_from_data_frame docs](http://igraph.org/r/doc/graph_from_data_frame.html):
-```{r}
+```{r,eval=F}
 actors <- data.frame(name=c("Alice", "Bob", "Cecil", "David",
                             "Esmeralda"),
                      age=c(48,33,45,34,21),

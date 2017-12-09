@@ -25,12 +25,14 @@ relations <- data.frame(from=c("Bob", "Cecil", "Cecil", "David",
 g <- graph_from_data_frame(relations, directed=TRUE, vertices=actors)
 ```
 
-You now have an igraph networks, g.  In order to translate the network together with all vertex (node) and edge attributes over to Cytoscape, simply use:
+You now have an igraph network, g.  In order to translate the network together with all vertex (node) and edge attributes over to Cytoscape, simply use:
 
 ```
-createNetworkFromIgraph(g)
+createNetworkFromIgraph(g, "myNetwork")
 ```
 
-Similarly, you can use getTableColumns() in r2cytoscape to retreive vertex (node) and edge data.frames to construct an igraph network. 
+Inversely, you can use createIgraphFromNetwork() in r2cytoscape to retreive vertex (node) and edge data.frames to construct an igraph network. 
 
-
+```
+g2 <- createIgraphFromNetwork("myNetwork")
+```

@@ -3,7 +3,7 @@
 #' @details The 'name' column is always retrieved along with specified columns. The 'name' values are used
 #' as row names in the returned data frame. Note that this function fails on columns with missing values.
 #' @param table name of table, e.g., node, edge, network
-#' @param columns names of columns to retrieve values from as list object or comma-separated list
+#' @param columns names of columns to retrieve values from as list object or comma-separated list; default is all columns
 #' @param namespace namespace of table; default is "default"
 #' @param network name or suid of the network; default is "current" network
 #' @param base.url cyrest base url for communicating with cytoscape
@@ -14,7 +14,11 @@
 #' @importFrom utils URLencode
 #' @section Example: getTableColumns('node','score')
 
-getTableColumns<-function(table,columns,namespace='default',network='current',base.url='http://localhost:1234/v1'){
+getTableColumns<-function(table,columns=NULL,namespace='default',network='current',base.url='http://localhost:1234/v1'){
+
+    #all columns
+    if(is.null(columns))
+        columns = listTableColumns(table, namespace, network,base.url)
 
     #handle comma separated lists and list objects
     col.list = columns

@@ -1,7 +1,7 @@
 #' Create a Cytoscape network from an igraph network
 #'
 #' @description Takes an igraph network and generates data frames for nodes and edges to
-#' send to the generic createNetwork function.
+#' send to the createNetwork function.
 #' Returns the network.suid and applies the perferred layout set in Cytoscape preferences.
 #' @details Vertices and edges from the igraph network will be translated into nodes and edges
 #' in Cytoscape. Associated attributes will also be passed to Cytoscape as node and edge table columns.

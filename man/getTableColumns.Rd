@@ -4,13 +4,13 @@
 \alias{getTableColumns}
 \title{Get table column values}
 \usage{
-getTableColumns(table, columns, namespace = "default", network = "current",
-  base.url = "http://localhost:1234/v1")
+getTableColumns(table, columns = NULL, namespace = "default",
+  network = "current", base.url = "http://localhost:1234/v1")
 }
 \arguments{
 \item{table}{name of table, e.g., node, edge, network}
 
-\item{columns}{names of columns to retrieve values from as list object or comma-separated list}
+\item{columns}{names of columns to retrieve values from as list object or comma-separated list; default is all columns}
 
 \item{namespace}{namespace of table; default is "default"}
 

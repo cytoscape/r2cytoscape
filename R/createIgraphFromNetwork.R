@@ -10,8 +10,11 @@
 #' @return (igraph) an igraph network
 #' @export
 #' @import igraph
-#' @section Example: createNetworkFromIgraph(g)
-#' @seealso createNetwork
+#' @examples
+#' \donttest{
+#' createNetworkFromIgraph(g)
+#' }
+#' @seealso createNetwork, createIgraphFromNetwork
 
 createIgraphFromNetwork <- function(network='current',base.url='http://localhost:1234/v1') {
 

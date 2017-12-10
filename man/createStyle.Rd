@@ -25,9 +25,12 @@ Creates a style from defaults and predefined mappings.
 \details{
 Requires attribute mappings to be previously created, see mapVisualProperty.
 }
-\section{Example construction}{
+\examples{
+\donttest{
+#first there has to be a network to apply style to
+example(createNetwork)
 
-\preformatted{
+#then prepare style variables
 style.name = "myStyle"
 defaults <- list(NODE_SHAPE="diamond",
                  NODE_SIZE=30,
@@ -35,13 +38,17 @@ defaults <- list(NODE_SHAPE="diamond",
                  NODE_LABEL_POSITION="W,E,c,0.00,0.00")
 nodeLabels <- mapVisualProperty('node label','id','p')
 nodeFills <- mapVisualProperty('node fill color','group','d',c("A","B"), c("#FF9900","#66AAAA"))
-arrowShapes <- mapVisualProperty('Edge Target Arrow Shape','interaction','d',c("activates","inhibits","interacts"),c("Arrow","T","None"))
+arrowShapes <- mapVisualProperty('Edge Target Arrow Shape','interaction','d',
+                                 c("activates","inhibits","interacts"),c("Arrow","T","None"))
 edgeWidth <- mapVisualProperty('edge width','weight','p')
 
+#and then create the style
 createStyle(style.name, defaults, list(nodeLabels,nodeFills,arrowShapes,edgeWidth))
-}
-}
 
+#finsh by applying the style
+example(applyStyle)
+}
+}
 \seealso{
-mapVisualProperty
+applyStyle, mapVisualProperty
 }

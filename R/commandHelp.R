@@ -8,9 +8,12 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return List of available commands or args
 #' @export
-#' @section Examples: commandHelp() \cr
-#' commandHelp('node') \cr
+#' @examples
+#' \donttest{
+#' commandHelp()
+#' commandHelp('node')
 #' commandHelp('node get attribute')
+#' }
 #' @import XML
 #' @import httr
 #' @importFrom utils head

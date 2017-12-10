@@ -36,12 +36,6 @@ Mapping will also fail if the data type of table.column.values does not match th
 the existing table.column. Note that all imported numeric data are stored as Doubles in
 Cytosacpe tables; and character or mixed data are stored as Strings.
 }
-\section{Examples}{
- mapVisualProperty('node fill color','score','c',c(-4.0,0.0,9.0),c('#99CCFF','#FFFFFF','#FF7777')) \cr
-mapVisualProperty('node shape','type','d',c('protein','metabolite'),c('ellipse','rectangle')) \cr
-mapVisualProperty('node label','alias','p')
-}
-
 \section{List of visual properties}{
 
 \tabular{lll}{
@@ -79,6 +73,13 @@ Node Z Location \tab  \tab  \cr
 }
 }
 
+\examples{
+\donttest{
+mapVisualProperty('node fill color','score','c',c(-4.0,0.0,9.0),c('#99CCFF','#FFFFFF','#FF7777'))
+mapVisualProperty('node shape','type','d',c('protein','metabolite'),c('ellipse','rectangle'))
+mapVisualProperty('node label','alias','p')
+}
+}
 \seealso{
 setStyleMappings createStyle
 }

@@ -19,7 +19,8 @@ server response
 \description{
 Exports the current visual style as a data file
 }
-\section{Example}{
- exportStyle('myStyle','JSON')
+\examples{
+\donttest{
+exportStyle('myStyle','JSON')
 }
-
+}

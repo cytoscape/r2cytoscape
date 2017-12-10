@@ -13,9 +13,15 @@ check_galfiltered<-function() {
 }
 
 ## Run tests
-test_that("applyLayout",{
+test_that("setCurrentNetwork",{
     check_cytoscape()
     check_galfiltered()
+    expect_match(setCurrentNetwork('asdfgh'),"Failed: null") # no such network
+    expect_match(setCurrentNetwork('galFiltered.sif'),"Set current network to galFiltered.sif") #success response
+})
+
+test_that("applyLayout",{
+    check_cytoscape()
     expect_equal(length(applyLayout("circular")),0) #no response
     expect_equal(length(applyLayout("asdfgh")),1) #error response
     expect_error(applyLayout(),"is missing")

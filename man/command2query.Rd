@@ -17,7 +17,8 @@ cyrest url
 \description{
 Converts a command string to a CyREST query url.
 }
-\section{Example}{
- command2query('layout get preferred')
+\examples{
+\donttest{
+command2query('layout get preferred')
 }
-
+}

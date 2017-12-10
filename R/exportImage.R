@@ -6,7 +6,10 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return server response
 #' @export
-#' @section Example: exportImage('myNetwork','PDF')
+#' @examples
+#' \donttest{
+#' exportImage('myNetwork','PDF')
+#' }
 
 exportImage<-function(filename,type,base.url='http://localhost:1234/v1'){
     commandRun(paste0('view export options=',type,' OutputFile="',filename,'"'))

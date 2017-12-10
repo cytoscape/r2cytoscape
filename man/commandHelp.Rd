@@ -22,9 +22,10 @@ this function returns a list of available commands or args.
 Works with or without 'help' command prefix. Note that if you ask about a command that doesn't
 have any arguments, this function will run the command!
 }
-\section{Examples}{
- commandHelp() \cr
-commandHelp('node') \cr
+\examples{
+\donttest{
+commandHelp()
+commandHelp('node')
 commandHelp('node get attribute')
 }
-
+}

@@ -20,8 +20,9 @@ server response
 \description{
 Rename network
 }
-\section{Examples}{
- renameNetwork("newName") \cr
+\examples{
+\donttest{
+renameNetwork("newName")
 renameNetwork("newName","oldName")
 }
-
+}

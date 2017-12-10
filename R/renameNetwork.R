@@ -7,8 +7,11 @@
 #' @export
 #' @import RJSONIO
 #' @import httr
-#' @section Examples: renameNetwork("newName") \cr
+#' @examples
+#' \donttest{
+#' renameNetwork("newName")
 #' renameNetwork("newName","oldName")
+#' }
 
 renameNetwork <- function(new.name, network='current',base.url='http://localhost:1234/v1'){
 

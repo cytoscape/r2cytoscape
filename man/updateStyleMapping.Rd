@@ -23,10 +23,11 @@ visual property mapping if it doesn't already exist in the style.
 \details{
 Requires visual property mappings to be previously created, see mapVisualProperty.
 }
-\section{Example}{
- updateStyleMapping('myStyle',mapVisualProperty('node label','name','p'))
+\examples{
+\donttest{
+updateStyleMapping('myStyle',mapVisualProperty('node label','name','p'))
 }
-
+}
 \seealso{
 mapVisualProperty
 }

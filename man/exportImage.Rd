@@ -22,7 +22,8 @@ Exports the current network view as an image
 \details{
 The image is cropped per the current view in Cytoscape.
 }
-\section{Example}{
- exportImage('myNetwork','PDF')
+\examples{
+\donttest{
+exportImage('myNetwork','PDF')
 }
-
+}

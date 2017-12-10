@@ -21,3 +21,10 @@ list of names of selected nodes, including original selection
 Select nodes directly connected to currently selected nodes. Can
 specify connection directionality using the direction param.
 }
+\examples{
+\donttest{
+selectFirstNeighbors()
+selectFirstNeighors('outgoing')
+selectFirstNeighors('incoming')
+}
+}

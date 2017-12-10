@@ -18,8 +18,9 @@ Web page
 Opens swagger docs in default browser for a live
 instance of CyREST or CyREST-supported operations.
 }
-\section{Examples}{
- openCySwagger() \cr
+\examples{
+\donttest{
+openCySwagger()
 openCySwagger('commands')
 }
-
+}

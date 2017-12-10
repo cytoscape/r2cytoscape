@@ -12,7 +12,12 @@
 #' @import httr
 #' @import RJSONIO
 #' @importFrom utils URLencode
-#' @section Example: getTableColumns('node','score')
+#' @examples
+#' \donttest{
+#' example(createNetwork)
+#'
+#' getTableColumns('node','group')
+#' }
 
 getTableColumns<-function(table,columns=NULL,namespace='default',network='current',base.url='http://localhost:1234/v1'){
 

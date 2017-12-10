@@ -5,6 +5,10 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return server response
 #' @export
+#' @examples
+#' \donttest{
+#' setCurrentNetwork('MyNetwork')
+#' }
 
 setCurrentNetwork <- function(network, base.url='http://localhost:1234/v1'){
 

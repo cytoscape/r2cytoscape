@@ -16,11 +16,14 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return SUID of new subnetwork
 #' @export
-#' @section Examples: createSubnetwork("selected") \cr
-#' createSubnetwork("selected",subnetwork.name="mySubnetwork") \cr
-#' createSubnetwork(c("node 1","node 2","node 3")) \cr
-#' createSubnetwork(c("AKT1","TP53","PIK3CA"),"display name") \cr
+#' @examples
+#' \donttest{
+#' createSubnetwork("selected")
+#' createSubnetwork("selected",subnetwork.name="mySubnetwork")
+#' createSubnetwork(c("node 1","node 2","node 3"))
+#' createSubnetwork(c("AKT1","TP53","PIK3CA"),"display name")
 #' createSubnetwork(edges="all") #subnetwork of all connected nodes
+#' }
 #' @seealso createNetwork
 
 createSubnetwork <- function(nodes,nodes.by.col='name',edges,edges.by.col='name',

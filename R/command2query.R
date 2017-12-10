@@ -5,7 +5,10 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return cyrest url
 #' @export
-#' @section Example: command2query('layout get preferred')
+#' @examples
+#' \donttest{
+#' command2query('layout get preferred')
+#' }
 #' @importFrom utils URLencode
 
 command2query<-function(cmd.string, base.url='http://localhost:1234/v1'){

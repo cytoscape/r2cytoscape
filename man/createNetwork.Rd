@@ -38,21 +38,20 @@ are loaded as edge attributes. The 'interaction' list can contain a single
 value to apply to all rows; and if excluded altogether, the interaction type
 wiil be set to "interacts with".
 }
-\section{Example construction}{
-
-\preformatted{
+\examples{
+\donttest{
 nodes <- data.frame(id=c("node 0","node 1","node 2","node 3"),
            group=c("A","A","B","B"), # optional
            stringsAsFactors=FALSE)
 edges <- data.frame(source=c("node 0","node 0","node 0","node 2"),
            target=c("node 1","node 2","node 3","node 3"),
            interaction=c("inhibits","interacts","activates","interacts"),  # optional
+           weight=c(5,3,5,9), # optional
            stringsAsFactors=FALSE)
 
 createNetwork(nodes,edges)
 }
 }
-
 \seealso{
 createSubnetwork
 }

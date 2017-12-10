@@ -16,9 +16,12 @@
 #' @return (obj) ready to convert into JSON by style mapping operations
 #' @export
 #' @seealso setStyleMappings createStyle
-#' @section Examples: mapVisualProperty('node fill color','score','c',c(-4.0,0.0,9.0),c('#99CCFF','#FFFFFF','#FF7777')) \cr
-#' mapVisualProperty('node shape','type','d',c('protein','metabolite'),c('ellipse','rectangle')) \cr
+#' @examples
+#' \donttest{
+#' mapVisualProperty('node fill color','score','c',c(-4.0,0.0,9.0),c('#99CCFF','#FFFFFF','#FF7777'))
+#' mapVisualProperty('node shape','type','d',c('protein','metabolite'),c('ellipse','rectangle'))
 #' mapVisualProperty('node label','alias','p')
+#' }
 #' @section List of visual properties:
 #' \tabular{lll}{
 #' Node Border Line Type \tab Edge Bend \tab Network Background Paint \cr

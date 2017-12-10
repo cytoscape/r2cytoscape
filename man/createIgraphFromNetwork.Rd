@@ -24,10 +24,11 @@ Returns the network.suid and applies the perferred layout set in Cytoscape prefe
 Nodes and edges from the Cytoscape network will be translated into vertices and edges
 in igraph. Associated table columns will also be passed to igraph as vertiex and edge attributes.
 }
-\section{Example}{
- createNetworkFromIgraph(g)
+\examples{
+\donttest{
+createNetworkFromIgraph(g)
 }
-
+}
 \seealso{
-createNetwork
+createNetwork, createIgraphFromNetwork
 }

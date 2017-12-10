@@ -28,7 +28,10 @@ Get table column values
 The 'name' column is always retrieved along with specified columns. The 'name' values are used
 as row names in the returned data frame. Note that this function fails on columns with missing values.
 }
-\section{Example}{
- getTableColumns('node','score')
-}
+\examples{
+\donttest{
+example(createNetwork)
 
+getTableColumns('node','group')
+}
+}

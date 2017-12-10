@@ -25,3 +25,11 @@ provided list and those previously selected (even if keep.selected=TRUE)
 \description{
 Select nodes based on name, SUID or any other column.
 }
+\examples{
+\donttest{
+example(createNetwork)
+
+selectNodes(c('node 0','node 1'))
+selectNodes('B', by.col='group')
+}
+}

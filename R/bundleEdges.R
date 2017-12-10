@@ -6,7 +6,10 @@
 #' @export
 #' @import httr
 #' @import RJSONIO
-#' @section Example: bundleEdges()
+#' @examples
+#' \donttest{
+#' bundleEdges()
+#' }
 
 bundleEdges<-function(network='current',base.url='http://localhost:1234/v1'){
 

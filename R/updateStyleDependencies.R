@@ -6,7 +6,10 @@
 #' each dependency is set by a boolean, TRUE or FALSE (T or F)
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return server response
-#' @section Example: updateStyleDependencies("myStyle",list(nodeSizeLocked=TRUE))
+#' @examples
+#' \donttest{
+#' updateStyleDependencies("myStyle",list(nodeSizeLocked=TRUE))
+#' }
 #' @export
 #' @section List of Dependencies:
 #' arrowColorMatchesEdge

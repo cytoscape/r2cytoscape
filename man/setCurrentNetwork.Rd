@@ -17,3 +17,8 @@ server response
 \description{
 Selects the given network as "current"
 }
+\examples{
+\donttest{
+setCurrentNetwork('MyNetwork')
+}
+}

@@ -8,9 +8,12 @@
 #' @export
 #' @import httr
 #' @import RJSONIO
-#' @section Examples: listTableColumns() \cr
-#' listTableColumns('edge') \cr
+#' @examples
+#' \donttest{
+#' listTableColumns()
+#' listTableColumns('edge')
 #' listTableColumns('network')
+#' }
 
 listTableColumns<-function(table='node',namespace='default',network='current',base.url='http://localhost:1234/v1'){
 

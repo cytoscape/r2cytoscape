@@ -21,10 +21,6 @@ server response
 \description{
 Updates style dependencies, overriding any prior settings.
 }
-\section{Example}{
- updateStyleDependencies("myStyle",list(nodeSizeLocked=TRUE))
-}
-
 \section{List of Dependencies}{
 
 arrowColorMatchesEdge
@@ -32,3 +28,8 @@ nodeCustomGraphicsSizeSync
 nodeSizeLocked
 }
 
+\examples{
+\donttest{
+updateStyleDependencies("myStyle",list(nodeSizeLocked=TRUE))
+}
+}

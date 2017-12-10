@@ -11,6 +11,13 @@
 #' @export
 #' @import RJSONIO
 #' @import httr
+#' @examples
+#' \donttest{
+#' example(createNetwork)
+#'
+#' selectNodes(c('node 0','node 1'))
+#' selectNodes('B', by.col='group')
+#' }
 
 selectNodes <- function(nodes, by.col='name', keep.selected=FALSE, network='current', base.url='http://localhost:1234/v1'){
 

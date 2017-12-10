@@ -38,14 +38,15 @@ Typical usage only requires specifying either nodes or edges. Note that selected
 along their connecting edges by default (see exclude.edges arg) and selected edges will always
 bring along their source and target nodes.
 }
-\section{Examples}{
- createSubnetwork("selected") \cr
-createSubnetwork("selected",subnetwork.name="mySubnetwork") \cr
-createSubnetwork(c("node 1","node 2","node 3")) \cr
-createSubnetwork(c("AKT1","TP53","PIK3CA"),"display name") \cr
+\examples{
+\donttest{
+createSubnetwork("selected")
+createSubnetwork("selected",subnetwork.name="mySubnetwork")
+createSubnetwork(c("node 1","node 2","node 3"))
+createSubnetwork(c("AKT1","TP53","PIK3CA"),"display name")
 createSubnetwork(edges="all") #subnetwork of all connected nodes
 }
-
+}
 \seealso{
 createNetwork
 }

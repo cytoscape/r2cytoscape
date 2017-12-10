@@ -22,9 +22,10 @@ list of column names
 \description{
 List names of all columns in a table
 }
-\section{Examples}{
- listTableColumns() \cr
-listTableColumns('edge') \cr
+\examples{
+\donttest{
+listTableColumns()
+listTableColumns('edge')
 listTableColumns('network')
 }
-
+}

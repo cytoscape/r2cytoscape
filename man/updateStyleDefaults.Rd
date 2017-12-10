@@ -21,10 +21,11 @@ server response
 Updates visual property defaults, overriding any prior settings. See mapVisualProperty for
 the list of visual properties.
 }
-\section{Example}{
- updateStyleDefaults('myStyle',list('node fill color'='#0000FF','node size'=50))
+\examples{
+\donttest{
+updateStyleDefaults('myStyle',list('node fill color'='#0000FF','node size'=50))
 }
-
+}
 \seealso{
 mapVisualProperty
 }

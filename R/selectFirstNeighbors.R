@@ -8,6 +8,12 @@
 #' @export
 #' @import RJSONIO
 #' @import httr
+#' @examples
+#' \donttest{
+#' selectFirstNeighbors()
+#' selectFirstNeighors('outgoing')
+#' selectFirstNeighors('incoming')
+#' }
 
 selectFirstNeighbors <- function(direction='any', network='current', base.url='http://localhost:1234/v1'){
 

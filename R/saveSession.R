@@ -5,7 +5,10 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return server response
 #' @export
-#' @section Example: saveSession('myFirstSession')
+#' @examples
+#' \donttest{
+#' saveSession('myFirstSession')
+#' }
 
 saveSession<-function(filename,base.url='http://localhost:1234/v1'){
     commandRun(paste0('session save as file="',filename,'"'))

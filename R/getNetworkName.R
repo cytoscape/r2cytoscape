@@ -4,8 +4,11 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return network viewid
 #' @export
-#' @section Examples: getNetworkName() \cr
+#' @examples
+#' \donttest{
+#' getNetworkName()
 #' getNetworkName(1111)
+#' }
 
 getNetworkName <- function(network.suid='current', base.url='http://localhost:1234/v1'){
     if(network.suid=='current')

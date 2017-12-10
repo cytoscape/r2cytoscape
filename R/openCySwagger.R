@@ -6,8 +6,11 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return Web page
 #' @export
-#' @section Examples: openCySwagger() \cr
+#' @examples
+#' \donttest{
+#' openCySwagger()
 #' openCySwagger('commands')
+#' }
 #' @importFrom utils browseURL
 
 openCySwagger<-function(domain='cyrest', base.url='http://localhost:1234/v1'){

@@ -17,7 +17,8 @@ server response
 \description{
 Bundle edges
 }
-\section{Example}{
- bundleEdges()
+\examples{
+\donttest{
+bundleEdges()
 }
-
+}

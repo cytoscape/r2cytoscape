@@ -13,8 +13,11 @@
 #' @return (int) network SUID
 #' @export
 #' @import igraph
-#' @section Example: createNetworkFromIgraph(g)
-#' @seealso createNetwork
+#' @examples
+#' \donttest{
+#' createNetworkFromIgraph(g)
+#' }
+#' @seealso createNetwork, createIgraphFromNetwork
 
 createNetworkFromIgraph <- function(igraph,network.name="MyNetwork",
                           collection.name="myNetworkCollection",base.url='http://localhost:1234/v1',...) {

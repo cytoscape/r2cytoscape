@@ -20,7 +20,8 @@ Saves the current Cytoscape session
 \details{
 Saves session as a CYS file.
 }
-\section{Example}{
- saveSession('myFirstSession')
+\examples{
+\donttest{
+saveSession('myFirstSession')
 }
-
+}

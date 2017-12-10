@@ -11,6 +11,7 @@
 #' @param table.key.column (char) name of Cytoscape table column to use as key; default is "name"
 #' @param network name or suid of the network; default is "current" network
 #' @param base.url cyrest base url for communicating with cytoscape
+#' @return server response
 #' @export
 
 loadTableData<-function(data, data.key.column='row.names', table='node', table.key.column='name',

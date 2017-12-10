@@ -18,7 +18,7 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("r2cytoscape")
 ```
 
-### Required software
+### Required Software
 The whole point of r2cytoscape is to connect with Cytoscape. You will need to install and launch Cytoscape: 
 
 * [Download Cytoscape](http://www.cytoscape.org/download.php) 
@@ -49,8 +49,14 @@ collection.name = "myCollection"
 network.suid <- createNetwork(mynodes,myedges,network.name,collection.name)
 ```
 
-### My First Style
-create style with node attribute-fill mappings and some defaults
+### Switch Styles
+Check out the marquee style!
+```{r, eval=F}
+applyStyle('Marquee')
+```
+
+### My Own Style
+Create your own style with node attribute fill mappings and some defaults
 ```{r, eval=F}
 style.name = "myStyle"
 defaults <- list(NODE_SHAPE="diamond",
@@ -64,12 +70,6 @@ edgeWidth <- mapVisualProperty('edge width','weight','p')
 
 createStyle(style.name, defaults, list(nodeLabels,nodeFills,arrowShapes,edgeWidth))
 applyStyle(style.name)
-```
-
-### Switch Styles
-Check out the marquee style!
-```{r, eval=F}
-applyStyle('Marquee')
 ```
 
 ### Browse Available Commands and Arguments

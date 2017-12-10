@@ -16,7 +16,7 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("r2cytoscape", "igraph")
 ```
 
-### Required software
+### Required Software
 The whole point of r2cytoscape is to connect with Cytoscape. You will need to install and launch Cytoscape: 
 
 * [Download Cytoscape](http://www.cytoscape.org/download.php) 

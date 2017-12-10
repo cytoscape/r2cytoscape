@@ -5,7 +5,10 @@
 #' @param base.url cyrest base url for communicating with cytoscape
 #' @return server response
 #' @export
-#' @section Example: applyLayout('force-directed defaultSpringCoefficient=.000004 defaultSpringLength=100')
+#' @examples
+#' \donttest{
+#' applyLayout('force-directed defaultSpringCoefficient=.000004 defaultSpringLength=100')
+#' }
 
 applyLayout<-function(layout,base.url='http://localhost:1234/v1'){
     res<-commandRun(paste('layout',layout,'network="current"',sep=' '))

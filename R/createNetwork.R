@@ -43,7 +43,7 @@ createNetwork <- function(nodes=NULL,edges=NULL,network.name="MyNetwork",
 
     if (is.null(nodes)) {
         if (!is.null(edges)) {
-            nodes = data.frame(id=c(edges$source,edges$target),stringsAsFactors = F)
+            nodes = data.frame(id=c(edges$source,edges$target),stringsAsFactors = FALSE)
         }else
             return("Create Network Failed: Must provide either nodes or edges")
     }

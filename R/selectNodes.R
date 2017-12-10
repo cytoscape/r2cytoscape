@@ -12,7 +12,7 @@
 #' @import RJSONIO
 #' @import httr
 
-selectNodes <- function(nodes, by.col='name', keep.selected=F, network='current', base.url='http://localhost:1234/v1'){
+selectNodes <- function(nodes, by.col='name', keep.selected=FALSE, network='current', base.url='http://localhost:1234/v1'){
 
     if (!keep.selected)
         clearSelection(network=network,base.url=base.url)

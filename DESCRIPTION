@@ -5,7 +5,7 @@ Authors@R: c(person("Shraddha", "Pai", email = "shraddha.pai@utoronto.ca", role 
 	person("Ruth","Isserlin",role="aut"),person("Alex","Pico",role="aut"),person("Kei","Ono",role="aut"))
 Description: A set of functions to facilitate using CyREST to automate network analysis and visualization in Cytoscape. These functions require that Cytoscape 3.6.0 (or greater) is installed and running. This package only covers a subset of the full capabilities of CyREST for Cytoscape automation. Refer to <www.cytoscape.org> and associated Swagger documentation for more information.
 Depends:
-    R (>= 3.3.1),RJSONIO,httr,XML,igraph
+    R (>= 3.3.1),RJSONIO,httr,XML,igraph,utils
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

@@ -21,6 +21,9 @@ loadTableData(data, data.key.column = "row.names", table = "node",
 
 \item{base.url}{cyrest base url for communicating with cytoscape}
 }
+\value{
+server response
+}
 \description{
 This function loads data into Cytoscape node/edge/network tables provided a
 common key, e.g., name. Data.frame column names will be used to set Cytoscape table column

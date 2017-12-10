@@ -4,7 +4,7 @@
 \alias{selectNodes}
 \title{Select nodes}
 \usage{
-selectNodes(nodes, by.col = "name", keep.selected = F,
+selectNodes(nodes, by.col = "name", keep.selected = FALSE,
   network = "current", base.url = "http://localhost:1234/v1")
 }
 \arguments{

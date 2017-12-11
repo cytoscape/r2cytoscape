@@ -36,7 +36,8 @@ EDGES should contain columns named: source, target and interaction. These names 
 args: source.id.list, target.id.list, interaction.type.list. Additional columns
 are loaded as edge attributes. The 'interaction' list can contain a single
 value to apply to all rows; and if excluded altogether, the interaction type
-wiil be set to "interacts with".
+wiil be set to "interacts with". NOTE: attribute values of types (num) and (int) will be imported
+as (Double); (chr) as (String); and (logical) as (Boolean).
 }
 \examples{
 \donttest{

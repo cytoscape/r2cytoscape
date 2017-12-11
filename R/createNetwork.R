@@ -9,7 +9,8 @@
 #' args: source.id.list, target.id.list, interaction.type.list. Additional columns
 #' are loaded as edge attributes. The 'interaction' list can contain a single
 #' value to apply to all rows; and if excluded altogether, the interaction type
-#' wiil be set to "interacts with".
+#' wiil be set to "interacts with". NOTE: attribute values of types (num) and (int) will be imported
+#' as (Double); (chr) as (String); and (logical) as (Boolean).
 #' @param nodes (data.frame) see details and examples below; default NULL to derive nodes from edge sources and targets
 #' @param edges (data.frame) see details and examples below; default NULL for disconnected set of nodes
 #' @param network.name (char) network name
@@ -112,6 +113,7 @@ edgeSet2JSON <- function(edge_set, source.id.list = 'source',
     .GlobalEnv$CreateNetwork.global.counter<-0
     .GlobalEnv$CreateNetwork.global.size<-1
     .GlobalEnv$CreateNetwork.global.json_set<-c()
+    #json_edges <- c()
 
     if(!(interaction.type.list %in% names(edge_set)))
         edge_set[,interaction.type.list] = rep('interacts with')
@@ -120,20 +122,14 @@ edgeSet2JSON <- function(edge_set, source.id.list = 'source',
                            edge_set[,target.id.list],sep=" ")
 
     for(i in 1:dim(edge_set)[1]){
-        rest <- c()
+        rest <- list()
+        rest[["name"]] = computed_name[i]
         for(j in 1:dim(edge_set)[2]){
-            rest <-  c(rest,assign(colnames(edge_set)[j] , edge_set[i,j]))
+            rest[[colnames(edge_set)[j]]] = edge_set[i,j]
         }
-        rest <- c(name = computed_name[i], rest)
-        rest = list(unlist(rest))
-        rest <- lapply(rest,FUN=function(x) {
-            names(x) <-
-                c("name", colnames(edge_set))
-            x
-        })
-        current_edge  <- list(data =  unlist(rest))
+        current_edge = list("data"=rest)
+        #json_edges[[i]] <- current_edge
         FastAppendListGlobal(current_edge)
-        #json_edges <- c(json_edges,   list(current_edge))
     }
     return(.GlobalEnv$CreateNetwork.global.json_set[1:.GlobalEnv$CreateNetwork.global.counter])
 }
@@ -149,24 +145,16 @@ nodeSet2JSON <- function(node.set, node.id.list='id',...){
     .GlobalEnv$CreateNetwork.global.counter<-0
     .GlobalEnv$CreateNetwork.global.size<-1
     .GlobalEnv$CreateNetwork.global.json_set<-c()
+    #json_nodes <- c()
 
     for(i in 1:dim(node.set)[1]){
-        #the all column info - translate all the columns into node attributes
-        rest <- c()
-        for(j in 1:dim(node.set)[2]){
-            rest <-  c(rest,assign(colnames(node.set)[j] , node.set[i,j]))
+        rest <- list()
+        for(j in 1:dim(edge_set)[2]){
+            rest[[colnames(node.set)[j]]] = node.set[i,j]
         }
-        rest <- c(node.set[i,node.id.list], rest)
-        rest = list(unlist(rest))
-        rest <- lapply(rest,FUN=function(x) {
-            names(x) <- c("name",colnames(node.set))
-            return(x)
-        })
-
-        #get current node
-        current_node <- list(data =  unlist(rest))
+        current_node = list("data"=rest)
+        #json_nodes[[i]] <- current_node
         FastAppendListGlobal(current_node)
-        #json_nodes <- c(json_nodes,list(current_node) )
     }
     return(.GlobalEnv$CreateNetwork.global.json_set[1:.GlobalEnv$CreateNetwork.global.counter])
 }

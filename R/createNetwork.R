@@ -149,7 +149,7 @@ nodeSet2JSON <- function(node.set, node.id.list='id',...){
 
     for(i in 1:dim(node.set)[1]){
         rest <- list()
-        for(j in 1:dim(edge_set)[2]){
+        for(j in 1:dim(node.set)[2]){
             rest[[colnames(node.set)[j]]] = node.set[i,j]
         }
         current_node = list("data"=rest)

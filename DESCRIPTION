@@ -1,6 +1,6 @@
 Package: r2cytoscape
 Title: Functions for Cytoscape Automation
-Version: 0.99.1
+Version: 0.99.2
 Authors@R: c(person("Shraddha", "Pai", email = "shraddha.pai@utoronto.ca", role = c("aut", "cre")), 
 	person("Ruth","Isserlin",role="aut"),person("Alex","Pico",role="aut"),person("Kei","Ono",role="aut"))
 Description: A set of simple functions to make Cytoscape automation easier in R. 

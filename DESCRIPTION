@@ -1,8 +1,11 @@
 Package: r2cytoscape
 Title: Functions for Cytoscape Automation
 Version: 0.99.3
-Authors@R: c(person("Shraddha", "Pai", role = c("aut", "cre")),person("Ruth","Isserlin",role="aut"),
-    person("Alex","Pico", email = "alex.pico@gladstone.ucsf.edu",role="aut"),person("Kei","Ono",role="aut"))
+Authors@R: c(person("Alex","Pico",role=c("aut", "cre"),email = "alex.pico@gladstone.ucsf.edu"),
+    person("Shraddha", "Pai",role ="aut"),
+    person("Ruth","Isserlin",role="aut"),
+    person("Kei","Ono",role="aut"))
+Maintainer: Alex Pico <alex.pico@gladstone.ucsf.edu>
 Description: A set of simple functions to make Cytoscape automation easier in R. 
     With this package you can conduct network analysis and visualization in Cytoscape from within R, import and extract data frames, transfer networks between igraph and Cytoscape, save high-resolution network images, and much more. 
     These functions require that Cytoscape 3.6.0 (or greater) is installed and running. For the full capabilities of CyREST and Commands for Cytoscape automation, refer to <www.cytoscape.org> and associated Swagger documentation.

@@ -1,3 +1,9 @@
+# Deprecated Package Notice
+We are merging all r2cytoscape functionality into a refactored RCy3 v2.0. No further development will be taking place on this codebase; all future development is focused on the new RCy3 effort: 
+
+https://github.com/cytoscape/RCy3
+
+
 # r2cytoscape 
 Functions for Cytoscape Automation in R
 
